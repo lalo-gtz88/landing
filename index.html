@@ -31,6 +31,28 @@
             line-height: 1.6;
         }
 
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        .lang-switch button {
+            background: transparent;
+            color: #9ca3af;
+            border: 1px solid #1f2933;
+            padding: 6px 10px;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .lang-switch button:hover {
+            color: #38bdf8;
+            border-color: #38bdf8;
+        }
+
+
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -61,7 +83,7 @@
             margin-bottom: 4rem;
         }
 
-        .hero span {
+        .hero .accent {
             color: var(--accent);
         }
 
@@ -112,79 +134,100 @@
 </head>
 
 <body>
+    <div class="lang-switch">
+        <button onclick="setLanguage('en')">EN</button>
+        <button onclick="setLanguage('es')">ES</button>
+    </div>
+
     <div class="container">
 
         <!-- HERO -->
         <section class="hero">
-            <h1>Eduardo Gutierrez <br><span>Software Developer</span></h1>
-            <p>
-                I help marketing agencies and startups with
-                <strong>bug fixes, small features, and integrations</strong>,
-                so they can ship faster without hiring more developers.
-            </p>
+
+            <h1>
+                <span data-en="Eduardo Gutierrez" data-es="Eduardo Gutierrez"></span><br>
+                <span class="accent" data-en="Software Developer" data-es="Desarrollador de software"></span>
+            </h1>
 
             <p>
-                Available for freelance, contract, or remote roles.
+                <span data-en="I help marketing agencies and startups with"
+                    data-es="Ayudo a agencias de marketing y startups con"></span>
+                <strong data-en="bug fixes, small features, and integrations"
+                    data-es="correccion de errores, funciones pequeñas e integraciones"></strong>,
+                <span data-en="so they can ship faster without hiring more developers."
+                    data-es="para que puedan entregar más rápido sin contratar mas desarrolladores"></span>
+            </p>
+
+            <p data-en="Available for freelance, contract, or remote roles."
+                data-es="Disponible para trabajo freelance, por contrato o remoto.">
             </p>
 
             <div class="cta">
-                <a href="#contact">Contact Me</a>
+                <a href="#contact" data-en="Contact Me" data-es="Contactarme"></a>
             </div>
         </section>
 
         <!-- WHAT I DO -->
         <section>
-            <h2>What I Do</h2>
+            <h2 data-en="What I Do" data-es="Que hago?"></h2>
             <div class="card">
-                <p>
-                    I specialize in supporting teams that need reliable development help
-                    without the overhead of a full-time hire.
+                <p data-en="I specialize in supporting teams that need reliable development help
+                    without the overhead of a full-time hire."
+                    data-es="Me especializo en apoyar equipos que necesitan ayuda confiable en desarrollo sin el costo de contratar a tiempo completo.">
                 </p>
 
                 <ul>
-                    <li>• Bug fixing in existing applications</li>
-                    <li>• Small to medium feature implementation</li>
-                    <li>• API & third-party integrations</li>
-                    <li>• Performance and stability improvements</li>
-                    <li>• Ongoing maintenance and support</li>
+                    <li data-en="• Bug fixing in existing applications"
+                        data-es="• Corrección de errores en aplicaciones existentes">
+                    </li>
+                    <li data-en="• Small to medium feature implementation"
+                        data-es="• Implementación de funciones pequeñas y medianas">
+                    </li>
+                    <li data-en="• API & third-party integrations"
+                        data-es="• Integraciones con APIs y servicios externos">
+                    </li>
+                    <li data-en="• Performance and stability improvements"
+                        data-es="• Mejoras de rendimiento y estabilidad">
+                    </li>
+                    <li data-en="• Ongoing maintenance and support" data-es="• Mantenimiento y soporte continuo">
+                    </li>
                 </ul>
             </div>
         </section>
 
         <!-- WHO I WORK WITH -->
         <section>
-            <h2>Who I Work With</h2>
+            <h2 data-en="Who I Work With" data-es="Con Quién Trabajo"></h2>
             <div class="card">
-                <p>
-                    I typically work with marketing agencies, startups, and small SaaS teams
-                    that already have an existing codebase.
+                <p data-en="I typically work with marketing agencies, startups, and small SaaS teams that already have an existing codebase."
+                    data-es="Normalmente trabajo con agencias de marketing, startups y pequeños equipos SaaS que ya cuentan con una base de código existente.">
                 </p>
-                <p>
-                    I’m comfortable joining ongoing projects, understanding existing systems,
-                    and delivering without disrupting workflows.
+                <p data-en="I’m comfortable joining ongoing projects, understanding existing systems, and delivering without disrupting workflows."
+                    data-es="Me siento cómodo integrándome a proyectos en curso, entendiendo sistemas existentes y entregando resultados sin interrumpir los flujos de trabajo.">
                 </p>
             </div>
         </section>
 
         <!-- HOW I WORK -->
         <section>
-            <h2>How I Work</h2>
+            <h2 data-en="How I Work" data-es="Cómo Trabajo"></h2>
             <div class="card">
                 <ul>
-                    <li>• Clear and direct communication</li>
-                    <li>• Fast turnaround on small tasks</li>
-                    <li>• Clean, maintainable code</li>
-                    <li>• Respect for deadlines and existing systems</li>
+                    <li data-en="• Clear and direct communication" data-es="• Comunicación clara y directa"></li>
+                    <li data-en="• Fast turnaround on small tasks" data-es="• Entregas rápidas en tareas pequeñas"></li>
+                    <li data-en="• Clean, maintainable code" data-es="• Código limpio y mantenible"></li>
+                    <li data-en="• Respect for deadlines and existing systems"
+                        data-es="• Respeto por tiempos y sistemas existentes"></li>
                 </ul>
-                <p>
-                    I focus on solving problems, not over-engineering solutions.
+                <p data-en="I focus on solving problems, not over-engineering solutions."
+                    data-es="Me enfoco en resolver problemas, no en sobre-ingenierizar soluciones.">
                 </p>
             </div>
         </section>
 
         <!-- TECH -->
         <section>
-            <h2>Technologies</h2>
+            <h2 data-en="Technologies" data-es="Tecnologías"></h2>
             <div class="card">
                 <ul>
                     <li>Laravel / PHP</li>
@@ -198,42 +241,52 @@
 
         <!-- ABOUT -->
         <section>
-            <h2>About Me</h2>
+            <h2 data-en="About Me" data-es="Sobre Mí"></h2>
             <div class="card">
-                <p>
-                    I’m a software developer with experience building and maintaining
-                    real-world systems used by real users.
+                <p data-en="I’m a software developer with experience building and maintaining real-world systems used by real users."
+                    data-es="Soy desarrollador de software con experiencia creando y manteniendo sistemas reales utilizados por usuarios reales.">
                 </p>
-                <p>
-                    I enjoy improving existing applications, fixing what’s broken,
-                    and helping teams move forward with less friction.
-                </p>
-                <p>
-                    You can call me <strong>Lalo</strong>.
+                <p data-en="I enjoy improving existing applications, fixing what’s broken, and helping teams move forward with less friction."
+                    data-es="Disfruto mejorar aplicaciones existentes, corregir lo que no funciona y ayudar a los equipos a avanzar con menos fricción.">
                 </p>
             </div>
         </section>
 
         <!-- CONTACT -->
         <section id="contact">
-            <h2>Contact</h2>
+            <h2 data-en="Contact" data-es="Contacto"></h2>
             <div class="card contact">
-                <p>
-                    If you need development support or want to discuss a role,
-                    feel free to reach out.
+                <p data-en="If you need development support or want to discuss a role, feel free to reach out."
+                    data-es="Si necesitas apoyo en desarrollo o quieres platicar sobre una oportunidad, no dudes en contactarme.">
                 </p>
                 <p>
-                    📧 Email: <a href="mailto:r.eduardo.gtz@gmail.com">r.eduardo.gtz@gmail.com</a><br>
-                    💼 LinkedIn: <a href="https://linkedin.com/in/ramon-eduardo-gutierrez-escobar-0a4988139" target="_blank">Eduardo Gtz</a>
+                    📧 <span data-en="Email:" data-es="Correo:"></span>
+                    <a href="mailto:r.eduardo.gtz@gmail.com">r.eduardo.gtz@gmail.com</a><br>
+                    💼 LinkedIn:
+                    <a href="https://linkedin.com/in/ramon-eduardo-gutierrez-escobar-0a4988139" target="_blank">
+                        <span data-en="Eduardo Gtz" data-es="Eduardo Gtz"></span>
+                    </a>
                 </p>
             </div>
         </section>
 
-        <footer>
-            © Eduardo Gutierrez — Laravel · React · Integrations · Maintenance
+        <footer data-en="© Eduardo Gutierrez — Laravel · React · Integrations · Maintenance"
+            data-es="© Eduardo Gutierrez — Laravel · React · Integraciones · Mantenimiento">
         </footer>
+
 
     </div>
 </body>
+<script>
+    function setLanguage(lang) {
+        document.querySelectorAll('[data-en]').forEach(el => {
+            el.textContent = el.getAttribute(`data-${lang}`);
+        });
+        localStorage.setItem('lang', lang);
+    }
+
+    const savedLang = localStorage.getItem('lang') || 'en';
+    setLanguage(savedLang);
+</script>
 
 </html>
