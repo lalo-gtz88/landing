@@ -3,55 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV - Tu Nombre</title>
+  <title>Ramón Gutiérrez | Developer</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
-    .container { max-width: 900px; margin: auto; padding: 20px; }
-    .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    h1, h2 { margin: 0 0 10px; }
-    .top { display: flex; justify-content: space-between; align-items: center; }
-    .lang-btn { cursor: pointer; padding: 5px 10px; border: none; border-radius: 5px; background: #333; color: white; }
-    ul { padding-left: 20px; }
+    body { margin:0; font-family: 'Segoe UI', sans-serif; background:#0f172a; color:#e2e8f0; }
+    .container { max-width: 900px; margin:auto; padding:40px 20px; }
+    h1 { font-size: 2.5rem; margin-bottom:10px; }
+    h2 { margin-top:40px; border-bottom:1px solid #334155; padding-bottom:5px; }
+    p { line-height:1.6; color:#cbd5f5; }
+    .tag { display:inline-block; background:#1e293b; padding:5px 10px; border-radius:6px; margin:5px 5px 0 0; font-size:0.85rem; }
+    .project { background:#1e293b; padding:15px; border-radius:10px; margin-top:10px; }
+    .top { display:flex; justify-content:space-between; align-items:center; }
+    button { background:#2563eb; border:none; color:white; padding:6px 12px; border-radius:6px; cursor:pointer; }
+    a { color:#60a5fa; text-decoration:none; }
   </style>
 </head>
 <body>
 
 <div class="container">
 
-  <div class="card top">
+  <div class="top">
     <div>
-      <h1 id="name">Tu Nombre</h1>
-      <p id="title">Software Engineer | Backend Developer | Ingeniero en Sistemas</p>
-      <p>📧 tuemail@email.com</p>
+      <h1 id="name">Ramón Gutiérrez</h1>
+      <p id="role">Backend Developer / Software Engineer</p>
     </div>
-    <button class="lang-btn" onclick="toggleLang()">EN / ES</button>
+    <button onclick="toggleLang()">EN / ES</button>
   </div>
 
-  <div class="card">
-    <h2 id="profile_title">Perfil Profesional</h2>
-    <p id="profile_text">
-      Ingeniero en sistemas con más de 10 años de experiencia en desarrollo de software y soporte en entornos críticos.
-    </p>
+  <p id="about">
+    Soy ingeniero en sistemas enfocado en construir soluciones reales. Me especializo en backend con PHP y C#, creando sistemas como ERPs, POS y herramientas internas que automatizan procesos y resuelven problemas de negocio.
+  </p>
+
+  <h2 id="tech_title">Stack</h2>
+  <div id="tech">
+    <span class="tag">PHP</span>
+    <span class="tag">Laravel</span>
+    <span class="tag">C#</span>
+    <span class="tag">MySQL</span>
+    <span class="tag">SQL Server</span>
+    <span class="tag">JavaScript</span>
   </div>
 
-  <div class="card">
-    <h2 id="experience_title">Experiencia</h2>
-    <h3>JMAS</h3>
-    <p id="exp1">Desarrollo de sistemas internos, monitoreo de red y automatización de procesos.</p>
+  <h2 id="projects_title">Proyectos</h2>
 
-    <h3>ISSSTE</h3>
-    <p id="exp2">Soporte técnico y desarrollo de sistemas administrativos internos.</p>
+  <div class="project" id="p1">
+    <strong>SIGOP (ERP)</strong>
+    <p>Sistema para gestión de obra con facturación, control de avance y geolocalización.</p>
   </div>
 
-  <div class="card">
-    <h2 id="projects_title">Proyectos</h2>
-    <ul>
-      <li id="proj1">ERP de Obra (SIGOP)</li>
-      <li id="proj2">Sistema POS</li>
-      <li id="proj3">Expediente Clínico</li>
-      <li id="proj4">Sistema HelpDesk (NetDesk)</li>
-    </ul>
+  <div class="project" id="p2">
+    <strong>POS</strong>
+    <p>Sistema de ventas para negocio local con control de productos y reportes.</p>
   </div>
+
+  <div class="project" id="p3">
+    <strong>Expediente Clínico</strong>
+    <p>Gestión de pacientes, agenda y generación de documentos médicos.</p>
+  </div>
+
+  <div class="project" id="p4">
+    <strong>NetDesk</strong>
+    <p>Helpdesk con monitoreo de red y alertas automáticas.</p>
+  </div>
+
+  <h2 id="contact_title">Contacto</h2>
+  <p>📧 tuemail@email.com</p>
+  <p>GitHub: <a href="#">tuusuario</a></p>
 
 </div>
 
@@ -61,46 +77,28 @@
   function toggleLang() {
     lang = lang === 'es' ? 'en' : 'es';
 
-    const content = {
+    const t = {
       es: {
-        title: "Software Engineer | Backend Developer | Ingeniero en Sistemas",
-        profile_title: "Perfil Profesional",
-        profile_text: "Ingeniero en sistemas con más de 10 años de experiencia en desarrollo de software y soporte en entornos críticos.",
-        experience_title: "Experiencia",
-        exp1: "Desarrollo de sistemas internos, monitoreo de red y automatización de procesos.",
-        exp2: "Soporte técnico y desarrollo de sistemas administrativos internos.",
-        projects_title: "Proyectos",
-        proj1: "ERP de Obra (SIGOP)",
-        proj2: "Sistema POS",
-        proj3: "Expediente Clínico",
-        proj4: "Sistema HelpDesk (NetDesk)"
+        role: "Backend Developer / Software Engineer",
+        about: "Soy ingeniero en sistemas enfocado en construir soluciones reales. Me especializo en backend con PHP y C#, creando sistemas como ERPs, POS y herramientas internas que automatizan procesos y resuelven problemas de negocio.",
+        tech: "Stack",
+        projects: "Proyectos",
+        contact: "Contacto"
       },
       en: {
-        title: "Software Engineer | Backend Developer | Systems Engineer",
-        profile_title: "Professional Profile",
-        profile_text: "Systems engineer with 10+ years of experience in software development and support in critical environments.",
-        experience_title: "Experience",
-        exp1: "Development of internal systems, network monitoring and process automation.",
-        exp2: "Technical support and development of internal administrative systems.",
-        projects_title: "Projects",
-        proj1: "Construction ERP (SIGOP)",
-        proj2: "POS System",
-        proj3: "Medical Record System",
-        proj4: "HelpDesk System (NetDesk)"
+        role: "Backend Developer / Software Engineer",
+        about: "Systems engineer focused on building real-world solutions. I specialize in backend development with PHP and C#, creating systems like ERPs, POS and internal tools that automate processes and solve business problems.",
+        tech: "Stack",
+        projects: "Projects",
+        contact: "Contact"
       }
     };
 
-    document.getElementById('title').innerText = content[lang].title;
-    document.getElementById('profile_title').innerText = content[lang].profile_title;
-    document.getElementById('profile_text').innerText = content[lang].profile_text;
-    document.getElementById('experience_title').innerText = content[lang].experience_title;
-    document.getElementById('exp1').innerText = content[lang].exp1;
-    document.getElementById('exp2').innerText = content[lang].exp2;
-    document.getElementById('projects_title').innerText = content[lang].projects_title;
-    document.getElementById('proj1').innerText = content[lang].proj1;
-    document.getElementById('proj2').innerText = content[lang].proj2;
-    document.getElementById('proj3').innerText = content[lang].proj3;
-    document.getElementById('proj4').innerText = content[lang].proj4;
+    document.getElementById('role').innerText = t[lang].role;
+    document.getElementById('about').innerText = t[lang].about;
+    document.getElementById('tech_title').innerText = t[lang].tech;
+    document.getElementById('projects_title').innerText = t[lang].projects;
+    document.getElementById('contact_title').innerText = t[lang].contact;
   }
 </script>
 
