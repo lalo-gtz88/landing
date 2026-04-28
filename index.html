@@ -1,292 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Eduardo Gutierrez | Software Developer</title>
-
-    <meta name="description"
-        content="Laravel and React developer helping agencies and startups with bug fixes, integrations, and ongoing support." />
-
-    <style>
-        :root {
-            --bg: #0f172a;
-            --card: #111827;
-            --text: #e5e7eb;
-            --muted: #9ca3af;
-            --accent: #38bdf8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        body {
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        .lang-switch {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-        }
-
-        .lang-switch button {
-            background: transparent;
-            color: #9ca3af;
-            border: 1px solid #1f2933;
-            padding: 6px 10px;
-            margin-left: 5px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .lang-switch button:hover {
-            color: #38bdf8;
-            border-color: #38bdf8;
-        }
-
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-
-        h1,
-        h2 {
-            line-height: 1.3;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-        }
-
-        h2 {
-            font-size: 1.6rem;
-            margin-top: 3rem;
-        }
-
-        p {
-            margin-bottom: 1rem;
-            color: var(--muted);
-        }
-
-        .hero {
-            margin-bottom: 4rem;
-        }
-
-        .hero .accent {
-            color: var(--accent);
-        }
-
-        .cta {
-            margin-top: 1.5rem;
-        }
-
-        .cta a {
-            display: inline-block;
-            background: var(--accent);
-            color: #020617;
-            padding: 0.7rem 1.2rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .card {
-            background: var(--card);
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 1.5rem;
-        }
-
-        ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        ul li {
-            margin-bottom: 0.6rem;
-            color: var(--muted);
-        }
-
-        footer {
-            margin-top: 4rem;
-            border-top: 1px solid #1f2933;
-            padding-top: 1.5rem;
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
-
-        .contact a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Tu Nombre</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f5f5f5; }
+    .container { max-width: 900px; margin: auto; padding: 20px; }
+    .card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1, h2 { margin: 0 0 10px; }
+    .top { display: flex; justify-content: space-between; align-items: center; }
+    .lang-btn { cursor: pointer; padding: 5px 10px; border: none; border-radius: 5px; background: #333; color: white; }
+    ul { padding-left: 20px; }
+  </style>
 </head>
-
 <body>
-    <div class="lang-switch">
-        <button onclick="setLanguage('en')">EN</button>
-        <button onclick="setLanguage('es')">ES</button>
+
+<div class="container">
+
+  <div class="card top">
+    <div>
+      <h1 id="name">Tu Nombre</h1>
+      <p id="title">Software Engineer | Backend Developer | Ingeniero en Sistemas</p>
+      <p>📧 tuemail@email.com</p>
     </div>
+    <button class="lang-btn" onclick="toggleLang()">EN / ES</button>
+  </div>
 
-    <div class="container">
+  <div class="card">
+    <h2 id="profile_title">Perfil Profesional</h2>
+    <p id="profile_text">
+      Ingeniero en sistemas con más de 10 años de experiencia en desarrollo de software y soporte en entornos críticos.
+    </p>
+  </div>
 
-        <!-- HERO -->
-        <section class="hero">
+  <div class="card">
+    <h2 id="experience_title">Experiencia</h2>
+    <h3>JMAS</h3>
+    <p id="exp1">Desarrollo de sistemas internos, monitoreo de red y automatización de procesos.</p>
 
-            <h1>
-                <span data-en="Eduardo Gutierrez" data-es="Eduardo Gutierrez"></span><br>
-                <span class="accent" data-en="Software Developer" data-es="Desarrollador de software"></span>
-            </h1>
+    <h3>ISSSTE</h3>
+    <p id="exp2">Soporte técnico y desarrollo de sistemas administrativos internos.</p>
+  </div>
 
-            <p>
-                <span data-en="I help marketing agencies and startups with"
-                    data-es="Ayudo a agencias de marketing y startups con"></span>
-                <strong data-en="bug fixes, small features, and integrations"
-                    data-es="correccion de errores, funciones pequeñas e integraciones"></strong>,
-                <span data-en="so they can ship faster without hiring more developers."
-                    data-es="para que puedan entregar más rápido sin contratar mas desarrolladores"></span>
-            </p>
+  <div class="card">
+    <h2 id="projects_title">Proyectos</h2>
+    <ul>
+      <li id="proj1">ERP de Obra (SIGOP)</li>
+      <li id="proj2">Sistema POS</li>
+      <li id="proj3">Expediente Clínico</li>
+      <li id="proj4">Sistema HelpDesk (NetDesk)</li>
+    </ul>
+  </div>
 
-            <p data-en="Available for freelance, contract, or remote roles."
-                data-es="Disponible para trabajo freelance, por contrato o remoto.">
-            </p>
+</div>
 
-            <div class="cta">
-                <a href="#contact" data-en="Contact Me" data-es="Contactarme"></a>
-            </div>
-        </section>
-
-        <!-- WHAT I DO -->
-        <section>
-            <h2 data-en="What I Do" data-es="Que hago?"></h2>
-            <div class="card">
-                <p data-en="I specialize in supporting teams that need reliable development help
-                    without the overhead of a full-time hire."
-                    data-es="Me especializo en apoyar equipos que necesitan ayuda confiable en desarrollo sin el costo de contratar a tiempo completo.">
-                </p>
-
-                <ul>
-                    <li data-en="• Bug fixing in existing applications"
-                        data-es="• Corrección de errores en aplicaciones existentes">
-                    </li>
-                    <li data-en="• Small to medium feature implementation"
-                        data-es="• Implementación de funciones pequeñas y medianas">
-                    </li>
-                    <li data-en="• API & third-party integrations"
-                        data-es="• Integraciones con APIs y servicios externos">
-                    </li>
-                    <li data-en="• Performance and stability improvements"
-                        data-es="• Mejoras de rendimiento y estabilidad">
-                    </li>
-                    <li data-en="• Ongoing maintenance and support" data-es="• Mantenimiento y soporte continuo">
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- WHO I WORK WITH -->
-        <section>
-            <h2 data-en="Who I Work With" data-es="Con Quién Trabajo"></h2>
-            <div class="card">
-                <p data-en="I typically work with marketing agencies, startups, and small SaaS teams that already have an existing codebase."
-                    data-es="Normalmente trabajo con agencias de marketing, startups y pequeños equipos SaaS que ya cuentan con una base de código existente.">
-                </p>
-                <p data-en="I’m comfortable joining ongoing projects, understanding existing systems, and delivering without disrupting workflows."
-                    data-es="Me siento cómodo integrándome a proyectos en curso, entendiendo sistemas existentes y entregando resultados sin interrumpir los flujos de trabajo.">
-                </p>
-            </div>
-        </section>
-
-        <!-- HOW I WORK -->
-        <section>
-            <h2 data-en="How I Work" data-es="Cómo Trabajo"></h2>
-            <div class="card">
-                <ul>
-                    <li data-en="• Clear and direct communication" data-es="• Comunicación clara y directa"></li>
-                    <li data-en="• Fast turnaround on small tasks" data-es="• Entregas rápidas en tareas pequeñas"></li>
-                    <li data-en="• Clean, maintainable code" data-es="• Código limpio y mantenible"></li>
-                    <li data-en="• Respect for deadlines and existing systems"
-                        data-es="• Respeto por tiempos y sistemas existentes"></li>
-                </ul>
-                <p data-en="I focus on solving problems, not over-engineering solutions."
-                    data-es="Me enfoco en resolver problemas, no en sobre-ingenierizar soluciones.">
-                </p>
-            </div>
-        </section>
-
-        <!-- TECH -->
-        <section>
-            <h2 data-en="Technologies" data-es="Tecnologías"></h2>
-            <div class="card">
-                <ul>
-                    <li>Laravel / PHP</li>
-                    <li>React / JavaScript</li>
-                    <li>REST APIs</li>
-                    <li>MySQL / SQL</li>
-                    <li>Git</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section>
-            <h2 data-en="About Me" data-es="Sobre Mí"></h2>
-            <div class="card">
-                <p data-en="I’m a software developer with experience building and maintaining real-world systems used by real users."
-                    data-es="Soy desarrollador de software con experiencia creando y manteniendo sistemas reales utilizados por usuarios reales.">
-                </p>
-                <p data-en="I enjoy improving existing applications, fixing what’s broken, and helping teams move forward with less friction."
-                    data-es="Disfruto mejorar aplicaciones existentes, corregir lo que no funciona y ayudar a los equipos a avanzar con menos fricción.">
-                </p>
-            </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact">
-            <h2 data-en="Contact" data-es="Contacto"></h2>
-            <div class="card contact">
-                <p data-en="If you need development support or want to discuss a role, feel free to reach out."
-                    data-es="Si necesitas apoyo en desarrollo o quieres platicar sobre una oportunidad, no dudes en contactarme.">
-                </p>
-                <p>
-                    📧 <span data-en="Email:" data-es="Correo:"></span>
-                    <a href="mailto:r.eduardo.gtz@gmail.com">r.eduardo.gtz@gmail.com</a><br>
-                    💼 LinkedIn:
-                    <a href="https://linkedin.com/in/ramon-eduardo-gutierrez-escobar-0a4988139" target="_blank">
-                        <span data-en="Eduardo Gtz" data-es="Eduardo Gtz"></span>
-                    </a>
-                </p>
-            </div>
-        </section>
-
-        <footer data-en="© Eduardo Gutierrez — Laravel · Livewire · React · Integrations · Maintenance"
-            data-es="© Eduardo Gutierrez — Laravel · Livewire · React · Integraciones · Mantenimiento">
-        </footer>
-
-
-    </div>
-</body>
 <script>
-    function setLanguage(lang) {
-        document.querySelectorAll('[data-en]').forEach(el => {
-            el.textContent = el.getAttribute(`data-${lang}`);
-        });
-        localStorage.setItem('lang', lang);
-    }
+  let lang = 'es';
 
-    const savedLang = localStorage.getItem('lang') || 'en';
-    setLanguage(savedLang);
+  function toggleLang() {
+    lang = lang === 'es' ? 'en' : 'es';
+
+    const content = {
+      es: {
+        title: "Software Engineer | Backend Developer | Ingeniero en Sistemas",
+        profile_title: "Perfil Profesional",
+        profile_text: "Ingeniero en sistemas con más de 10 años de experiencia en desarrollo de software y soporte en entornos críticos.",
+        experience_title: "Experiencia",
+        exp1: "Desarrollo de sistemas internos, monitoreo de red y automatización de procesos.",
+        exp2: "Soporte técnico y desarrollo de sistemas administrativos internos.",
+        projects_title: "Proyectos",
+        proj1: "ERP de Obra (SIGOP)",
+        proj2: "Sistema POS",
+        proj3: "Expediente Clínico",
+        proj4: "Sistema HelpDesk (NetDesk)"
+      },
+      en: {
+        title: "Software Engineer | Backend Developer | Systems Engineer",
+        profile_title: "Professional Profile",
+        profile_text: "Systems engineer with 10+ years of experience in software development and support in critical environments.",
+        experience_title: "Experience",
+        exp1: "Development of internal systems, network monitoring and process automation.",
+        exp2: "Technical support and development of internal administrative systems.",
+        projects_title: "Projects",
+        proj1: "Construction ERP (SIGOP)",
+        proj2: "POS System",
+        proj3: "Medical Record System",
+        proj4: "HelpDesk System (NetDesk)"
+      }
+    };
+
+    document.getElementById('title').innerText = content[lang].title;
+    document.getElementById('profile_title').innerText = content[lang].profile_title;
+    document.getElementById('profile_text').innerText = content[lang].profile_text;
+    document.getElementById('experience_title').innerText = content[lang].experience_title;
+    document.getElementById('exp1').innerText = content[lang].exp1;
+    document.getElementById('exp2').innerText = content[lang].exp2;
+    document.getElementById('projects_title').innerText = content[lang].projects_title;
+    document.getElementById('proj1').innerText = content[lang].proj1;
+    document.getElementById('proj2').innerText = content[lang].proj2;
+    document.getElementById('proj3').innerText = content[lang].proj3;
+    document.getElementById('proj4').innerText = content[lang].proj4;
+  }
 </script>
 
+</body>
 </html>
